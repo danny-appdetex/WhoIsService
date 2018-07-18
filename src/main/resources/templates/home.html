@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        form {
+            /* Just to center the form on the page */
+            margin: 0 auto;
+        }
+
+        label {
+            /* To make sure that all labels have the same size and are properly aligned */
+            text-align: left;
+            display: block;
+        }
+
+        textarea {
+            font: 1em sans-serif;
+            width: 100%;
+            box-sizing: border-box;
+            height: 30em;
+            resize: none;
+            border: 1px solid #999;
+            overflow: scroll;
+        }
+
+        input:focus, textarea:focus {
+            /* To give a little highlight on active elements */
+            border-color: #000;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<form action="/my-handling-form-page">
+
+    <div>
+        <title>Bulk Search</title>
+    </div>
+    <div>
+        <label for="domain_search">Domain Names:</label>
+        <textarea id="domain_search" name="domains"></textarea>
+        <div class="button">
+            <button type="submit">Send your message</button>
+        </div>
+    </div>
+</form>
+
+</body>
+
+</html>
