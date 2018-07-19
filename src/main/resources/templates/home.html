@@ -19,7 +19,7 @@
             font: 1em sans-serif;
             width: 100%;
             box-sizing: border-box;
-            height: 30em;
+            height: 25em;
             resize: none;
             border: 1px solid #999;
             overflow: scroll;
@@ -30,25 +30,34 @@
             border-color: #000;
         }
 
+        li{
+            list-style-type: decimal;
+            margin-top: 10px;
+            padding: 5px;
+            border: solid 5px blue;
+            overflow-wrap: break-word;
+        }
+        #results{
+            height: 480px;
+            overflow: scroll;
+        }
     </style>
 </head>
 
 <body>
 
-<form action="/my-handling-form-page">
-
-    <div>
-        <title>Bulk Search</title>
+<div>
+    <label id="search_label" for="domain_search">Bulk Search</label>
+    <textarea id="domain_search" name="domains" placeholder="Enter Domains Here:"></textarea>
+    <div class="button">
+        <button id="myButton" onclick="clearList(); search()">Search</button>
     </div>
-    <div>
-        <label for="domain_search">Domain Names:</label>
-        <textarea id="domain_search" name="domains"></textarea>
-        <div class="button">
-            <button type="submit">Send your message</button>
-        </div>
-    </div>
-</form>
+</div>
 
+<div id = "results">
+    <ul id = "dynamic-list"></ul>
+</div>
+
+<script type="text/javascript" th:src="@{/js/search.js}"></script>
 </body>
-
 </html>
